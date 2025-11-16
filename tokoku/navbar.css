@@ -1,0 +1,36 @@
+.navbar {
+    background-color: #002f6c !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .navbar-brand {
+    color: #ff2e2e !important;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+
+  .navbar-brand span {
+    color: #ffd200; 
+  }
+
+  .nav-link {
+    color: white !important;
+    font-weight: 500;
+  }
+
+  .nav-link:hover {
+    color: #ffd200 !important;
+  }
+
+  .navbar-toggler {
+    border-color: white;
+  }
+
+  form.d-flex input {
+    width: 350px;
+  }
+
+.col{
+  justify-content: center;
+}

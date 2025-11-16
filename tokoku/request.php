@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="logregis.css">
+</head>
+<body style="color: white;">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.php">TOKO<span>KU</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="produk.php">Produk</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="request.php">Request</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-3">
+        <li class="nav-item">
+          <a class="nav-link" href="login.php"><i class="bi bi-person"></i>Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="register.php"><i class="bi bi-person"></i>Register</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class='tabel'>
+
+<table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Tipe</th>
+            <th>Harga</th>
+        </tr>
+        <?php
+        include 'koneksi.php';
+        $no = 1;
+        $request = mysqli_query($koneksi,"select * from request");
+        while($d = mysqli_fetch_array($request)){
+            ?>
+            <tr>
+                
+                <td><?php echo $d['idnya']; ?></td>
+                <td><?php echo $d['nama']; ?></td>
+                <td><?php echo $d['tipe']; ?></td>
+                <td><?php echo $d['harga']; ?></td>
+                <td>
+                    <a href="update.php?id=<?php echo $d['idnya']; ?>">UPDATE</a>
+                    <a href="delete.php?id=<?php echo $d['idnya']; ?>">HAPUS</a>
+            </td>
+        </tr>
+        <?php
+        }
+    ?>  
+</table>
+<a href="tambah.php" class="btn btn-primary">TAMBAH DATA</a>
+</div>
+</body>
+</html>
