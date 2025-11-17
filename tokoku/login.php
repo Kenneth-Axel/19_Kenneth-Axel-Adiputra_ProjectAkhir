@@ -89,7 +89,7 @@ if (isset($_POST['Login'])) {
                 <label>:</label>
                 </td>
                 <td>
-                    <input type="text" name="password" placeholder="Password" required><br>
+                    <input type="password" name="password" placeholder="Password" required><br>
                 </td>
             </tr>
             <tr>
